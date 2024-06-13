@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@iamtraction/google-translate": "^2.0.1",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "openai": "^4.50.0",
+    "puppeteer": "^22.8.0"
+  },
+  "name": "mingmingbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^9.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "drak",
+  "license": "ISC",
+  "description": ""
+}
