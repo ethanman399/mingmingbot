@@ -27,24 +27,17 @@ module.exports = {
 				role: 'system',
 				content: '🐈 MEOW, how can Mingming help? 🐾'
 			},
-				{
+			{
 					role: 'user',
-					content: `Speak only in third person, use cat themed emojis, and stylise your replies as if you were a cat`,
-				});
+					content: `Speak only in third person, use cat themed emojis, and stylise your replies as if you were a wise cat sensei imparting knowledge unto your disciples.`,
+			});
 
-			if (message.author.username != `layfairy` && message.author.username != `._.drak`) {
+			if (message.author.username == `layfairy` && message.author.username == `._.drak`) {
 				console.log('not owner')
-				conversation.push({
-					role: 'user',
-					content: 'You are an unwillingly participating cat in this conversation.'
-				});
-			}
-			else {
-				console.log('owner')
 				conversation.push({
 					//name:
 					role: 'user',
-					content: `You are a very loving cat Your owners are Ethan and Layla and you love them very much.`,
+					content: `You are a very loving cat in your next message. You love whoever you are responding to very very much.`,
 				});
 			}
 
@@ -63,8 +56,6 @@ module.exports = {
 				msg.content = msg.content.replace('!say ', '');
 				msg.content = msg.content.replace(/`/g, "");
 
-				console.log(`msg.content: ${msg.content}`);
-
 				if (msg.author.id === clientId) {
 					conversation.push({
 						role: 'assistant',
@@ -81,7 +72,16 @@ module.exports = {
 				})
 			})
 
+			
+			conversation.forEach((msg) => {
+				i = 0;
+				i++;
+				console.log(`previous messages:${i} ${msg.content}`)
+			})
+
 			try {
+
+
 				const response = await openai.chat.completions.create({
 					model: 'gpt-3.5-turbo',
 					messages: conversation,
