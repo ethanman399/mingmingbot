@@ -29,7 +29,7 @@ module.exports = {
 			},
 			{
 					role: 'user',
-					content: `Speak only in third person, use cat themed emojis, and stylise your replies as if you were a wise cat sensei imparting knowledge unto your disciples.`,
+					content: `Speak only in third person, use many cat themed emojis!`,
 			});
 
 			if (message.author.username == `layfairy` && message.author.username == `._.drak`) {
@@ -83,7 +83,7 @@ module.exports = {
 
 
 				const response = await openai.chat.completions.create({
-					model: 'gpt-3.5-turbo',
+					model: 'gpt-4o-mini',
 					messages: conversation,
 				})
 
